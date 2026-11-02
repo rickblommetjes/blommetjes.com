@@ -29,7 +29,7 @@ Astro generates responsive WebP project screenshots and a sitemap at build time.
 
 ## Content
 
-- `src/data/site.ts`: identity, social links and optional archive destination.
+- `src/data/site.ts`: identity and social links.
 - `src/pages/index.astro`: personal homepage.
 - `src/pages/photography.astro`: an honest empty gallery until original images are supplied.
 - `src/pages/projects/personal-designer-rs.astro`: the hobby project's landing page.
@@ -55,17 +55,13 @@ Never commit a deployment token.
 ### Domain cutover checklist
 
 1. Verify the generated site on its Azure `*.azurestaticapps.net` hostname.
-2. **Preserve the old blog first.** Find the independent Blogspot address in Blogger settings.
-   The public Blogger profile currently points back to `www.blommetjes.com`, so it is not an
-   independent archive. Change Blogger's custom-domain configuration as necessary to keep the
-   Blogspot site accessible; verify that it does not redirect to the new site.
-3. Set `archiveUrl` in `src/data/site.ts` to that verified HTTPS archive URL, rebuild and publish.
-   It intentionally stays unset rather than sending visitors in a circle.
-4. Add and validate `www.blommetjes.com` in Azure Static Web Apps using the exact DNS records
-   Azure provides. Change the CNAME only after the archive and new site are verified.
-5. Confirm managed HTTPS, page routes and a real 404 on the custom domain.
-6. Handle the apex `blommetjes.com` separately with a supported DNS alias or redirect to `www`.
+2. Add and validate `www.blommetjes.com` in Azure Static Web Apps using the exact DNS records
+   Azure provides. Change the CNAME only after the new site is verified.
+3. Confirm managed HTTPS, page routes and a real 404 on the custom domain.
+4. Handle the apex `blommetjes.com` separately with a supported DNS alias or redirect to `www`.
    Leave `allesvanblom.com` alone.
+
+The old blog does not need preservation, migration or an archive link. The new website replaces it.
 
 The canonical site URL is `https://www.blommetjes.com`. If that changes, update
 `astro.config.mjs`, `public/robots.txt` and the domain assertions in `tests/site.test.mjs`.

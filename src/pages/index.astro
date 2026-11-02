@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Connect from '../components/Connect.astro';
-import { archiveUrl } from '../data/site';
 import showcase from '../assets/personal-designer-rs.png';
 ---
 <Base>
@@ -70,7 +69,6 @@ import showcase from '../assets/personal-designer-rs.png';
       <div>
         <p>I'm Rick. This is my space outside the everyday: a home for a hands-on engineering project, photography, and whatever the next interesting idea might be.</p>
         <p>Some things here are polished. Others are experiments. That's part of the fun.</p>
-        {archiveUrl && <a class="text-link" href={archiveUrl}>From the archives: Dynamics NAV Tips &amp; Tricks <span aria-hidden="true">↗</span></a>}
       </div>
     </div>
   </section>

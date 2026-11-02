@@ -9,7 +9,3 @@ export const site = {
     { label: 'Facebook', href: 'https://www.facebook.com/rickblommetjes' },
   ],
 };
-
-// Set this only after verifying the blog's independent Blogspot address.
-// The old custom domain will point at this site after the DNS cutover.
-export const archiveUrl: string | undefined = undefined;
