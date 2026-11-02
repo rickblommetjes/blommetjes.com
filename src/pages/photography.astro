@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import Connect from '../components/Connect.astro';
+---
+<Base title="Photography — Rick Blom" description="A different kind of focus. A growing space for Rick Blom's photography, with the first photographs still to come.">
+  <section class="page-hero wrap">
+    <a class="back-link" href="/">← Back to my corner of the web</a>
+    <p class="eyebrow">02 / Things I see</p>
+    <h1>Less code.<br /><em>More looking.</em></h1>
+    <p class="intro">A different kind of focus. This is the home for my photography: the other side of a curious mind.</p>
+  </section>
+  <section class="gallery-empty wrap" aria-labelledby="gallery-heading">
+    <div class="empty-frame" aria-hidden="true"><div class="viewfinder"><span class="crosshair"></span><span class="frame-number">FRAME / 001</span></div></div>
+    <div>
+      <p class="eyebrow">A gallery in the making</p>
+      <h2 id="gallery-heading">The first frames<br /><em>are still to come.</em></h2>
+      <p>I'm making room for a selection of my photographs. No borrowed portfolio, no stock images filling the gaps. Just a little space waiting for the real thing.</p>
+      <a class="text-link" href="https://www.facebook.com/rickblommetjes" rel="me">Find me on Facebook <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+  <Connect />
+</Base>

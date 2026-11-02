@@ -1,0 +1,14 @@
+---
+import { site } from '../data/site';
+---
+<section class="connect wrap" id="connect" aria-labelledby="connect-heading">
+  <div>
+    <p class="eyebrow">Good things start with a conversation</p>
+    <h2 id="connect-heading">Curious, too?<br /><em>Let's connect.</em></h2>
+  </div>
+  <div class="connect-links">
+    {site.socials.map(({ label, href }) => (
+      <a href={href} rel="me">{label}<span aria-hidden="true">↗</span></a>
+    ))}
+  </div>
+</section>

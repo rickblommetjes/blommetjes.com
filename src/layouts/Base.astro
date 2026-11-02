@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const { title = site.title, description = site.description, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const current = Astro.url.pathname;
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/projects/personal-designer-rs/', label: 'Things I build' },
+  { href: '/photography/', label: 'Things I see' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f5f3ed" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="blommetjes.com" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/social-card.png', Astro.site)} />
+    <meta property="og:image:alt" content="Rick Blom. Things I build. Things I see." />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="wordmark" href="/" aria-label="Rick Blom, home">blommetjes<span aria-hidden="true">.</span></a>
+      <nav aria-label="Main navigation">
+        {nav.map(({ href, label }) => (
+          <a href={href} aria-current={current === href ? 'page' : undefined}>{label}</a>
+        ))}
+      </nav>
+      <a class="header-contact" href="/#connect">Let's connect <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer wrap">
+      <a class="wordmark" href="/">blommetjes<span aria-hidden="true">.</span></a>
+      <p>A personal corner of the internet. Made with curiosity.</p>
+      <p class="fine">© {new Date().getFullYear()} Rick Blom</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f3ed"/>
+  <path d="M70 90H1130M70 540H1130" stroke="#d3d6c9"/>
+  <text x="70" y="160" font-family="Arial,sans-serif" font-size="24" fill="#203d38">BLOMMETJES.COM / RICK BLOM</text>
+  <g font-family="Georgia,serif" font-size="92">
+    <text x="70" y="305" fill="#203d38">Things I build.</text>
+    <text x="70" y="415" fill="#9c4a2d" font-style="italic">Things I see.</text>
+  </g>
+  <text x="70" y="505" font-family="Arial,sans-serif" font-size="24" fill="#59645d">Code, curiosity &amp; a different perspective.</text>
+</svg>

@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Connect from '../../components/Connect.astro';
+import showcase from '../../assets/personal-designer-rs.png';
+---
+<Base title="PersonalDesignerRS — Rick Blom" description="A peek inside my Rust-based engineering and design hobby project, inspired by classic CAD. Explore the ideas behind PersonalDesignerRS.">
+  <section class="page-hero wrap">
+    <a class="back-link" href="/">← Back to my corner of the web</a>
+    <p class="eyebrow">01 / Things I build</p>
+    <div class="tags"><span>Rust</span><span>Private project</span><span>Experimental</span></div>
+    <h1>Old-school inspiration.<br /><em>A new foundation.</em></h1>
+    <p class="intro">PersonalDesignerRS is my engineering and design hobby project: a modern Rust-based workspace inspired by Personal Designer, the CAD system from the late 1980s and early 1990s.</p>
+    <aside class="notice project-status"><strong>A peek behind the scenes</strong><p>The project is private for now. This page shares a glimpse of the work, not a public download or source release.</p></aside>
+  </section>
+  <figure class="showcase wrap">
+    <Image src={showcase} alt="A real PersonalDesignerRS workspace with solid geometry, an engineering grid, object properties and a command prompt." widths={[640, 960, 1280]} sizes="(max-width: 1200px) 100vw, 1200px" format="webp" loading="eager" />
+    <figcaption>An earlier GPU-foundations build of PersonalDesignerRS. An actual application screenshot, not a mockup.</figcaption>
+  </figure>
+  <section class="details-grid wrap" aria-labelledby="project-heading">
+    <div><p class="eyebrow">The idea</p><h2 id="project-heading">More than<br /><em>a rendered cube.</em></h2></div>
+    <div class="prose">
+      <p>The interesting part isn't just drawing a shape. It's building a model that can be inspected, edited, saved and opened again. The document is the source of truth; the viewport is a view of it.</p>
+      <p>The project explores geometry, engineering objects and GPU rendering with clear boundaries between them. It is written in Rust, with Windows, Linux and macOS in mind.</p>
+      <p>This is an evolving hobby project, not a production CAD replacement. Exact geometry, STEP/DXF interchange, simulation and AI workflows are longer-term possibilities, not promises about today's build.</p>
+      <aside class="notice"><strong>Before trying a build</strong><p>Read that release's notes for platform support, known limitations and file compatibility. Experimental file formats change. Keep backups of your designs.</p></aside>
+    </div>
+  </section>
+  <section class="principles wrap" aria-label="Project principles">
+    <article><span class="index">01</span><h3>Learn by building</h3><p>Small, working steps. Understand the problem before reaching for a framework.</p></article>
+    <article><span class="index">02</span><h3>A model, not a picture</h3><p>Geometry belongs to the project, not just a GPU buffer. Commands make changes explicit.</p></article>
+    <article><span class="index">03</span><h3>A work in progress</h3><p>A personal experiment, shared here in snapshots. Curious about the project? Let's connect.</p></article>
+  </section>
+  <Connect />
+</Base>
